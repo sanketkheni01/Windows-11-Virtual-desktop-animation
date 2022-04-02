@@ -1,6 +1,14 @@
-﻿using TCD.System.TouchInjection;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using System;
+using Microsoft.Win32;
+using System.Reflection;
+using Exelus.Win11DesktopSwitchAnimatior;
+
+RegistryKey rkApp = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+var rkValue = rkApp.GetValue("Exelus.Win11DesktopSwitchAnimatior");
+if (rkValue == null) {
+    rkApp.SetValue("Exelus.Win11DesktopSwitchAnimatior", Assembly.GetExecutingAssembly().Location);
+}
 
 [DllImport("user32")]
 static extern int GetAsyncKeyState(int i);
