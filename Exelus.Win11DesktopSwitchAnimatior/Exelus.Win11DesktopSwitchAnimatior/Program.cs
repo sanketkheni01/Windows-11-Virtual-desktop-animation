@@ -6,7 +6,8 @@ using Exelus.Win11DesktopSwitchAnimatior;
 
 RegistryKey rkApp = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 var rkValue = rkApp.GetValue("Exelus.Win11DesktopSwitchAnimatior");
-if (rkValue == null) {
+if (rkValue == null)
+{
     rkApp.SetValue("Exelus.Win11DesktopSwitchAnimatior", Assembly.GetExecutingAssembly().Location);
 }
 
@@ -67,15 +68,18 @@ while (true)
 {
     Thread.Sleep(5);
     var ctrlState = GetAsyncKeyState(17);
-    var alstState = GetAsyncKeyState(18);
+    var altState = GetAsyncKeyState(18);
     var leftArrowState = GetAsyncKeyState(37);
     var rightArrowState = GetAsyncKeyState(39);
-    if (ctrlState != 0 && alstState != 0 && leftArrowState != 0)
+    /*
+        * * Get Key State https://www.amibroker.com/guide/afl/getasynckeystate.html
+    */
+    if (ctrlState != 0 && altState != 0 && leftArrowState != 0)
     {
         FourFingerSwipe(50);
         Thread.Sleep(300);
     }
-    if (ctrlState != 0 && alstState != 0 && rightArrowState != 0)
+    if (ctrlState != 0 && altState != 0 && rightArrowState != 0)
     {
         FourFingerSwipe(-50);
         Thread.Sleep(300);
