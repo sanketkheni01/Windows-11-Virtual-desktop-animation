@@ -68,18 +68,18 @@ while (true)
 {
     Thread.Sleep(5);
     var ctrlState = GetAsyncKeyState(17);
-    var altState = GetAsyncKeyState(18);
-    var leftArrowState = GetAsyncKeyState(37);
-    var rightArrowState = GetAsyncKeyState(39);
+    var winState = GetAsyncKeyState(91);
+    var upArrowState = GetAsyncKeyState(38);
+    var downArrowState = GetAsyncKeyState(40);
     /*
         * * Get Key State https://www.amibroker.com/guide/afl/getasynckeystate.html
     */
-    if (ctrlState != 0 && altState != 0 && leftArrowState != 0)
+    if (ctrlState != 0 && winState != 0 && upArrowState != 0)
     {
         FourFingerSwipe(50);
         Thread.Sleep(300);
     }
-    if (ctrlState != 0 && altState != 0 && rightArrowState != 0)
+    if (ctrlState != 0 && winState != 0 && downArrowState != 0)
     {
         FourFingerSwipe(-50);
         Thread.Sleep(300);

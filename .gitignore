@@ -350,4 +350,5 @@ MigrationBackup/
 .ionide/
 
 *.lnk
+*.txt
 .vscode/settings.json
