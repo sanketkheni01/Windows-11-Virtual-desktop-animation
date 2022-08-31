@@ -5,17 +5,17 @@ using System.Reflection;
 using Exelus.Win11DesktopSwitchAnimatior;
 
 RegistryKey rkApp = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-var rkValue = rkApp.GetValue("Exelus.Win11DesktopSwitchAnimatior");
+var rkValue = rkApp.GetValue("Win11DesktopSwitchAnimatior");
 if (rkValue == null)
 {
-    rkApp.SetValue("Exelus.Win11DesktopSwitchAnimatior", Assembly.GetExecutingAssembly().Location);
+    rkApp.SetValue("Win11DesktopSwitchAnimatior", Assembly.GetExecutingAssembly().Location);
 }
 
 [DllImport("user32")]
 static extern int GetAsyncKeyState(int i);
 TouchInjector.InitializeTouchInjection(4, TouchFeedback.NONE);
 
-bool FourFingerSwipe(int distance)
+bool FourFingerSwipe(int distance, int time)
 {
     var touches = new PointerTouchInfo[4];
     for (int i = 0; i < 4; i++)
@@ -47,22 +47,23 @@ bool FourFingerSwipe(int distance)
         touches[i].PointerInfo.PointerFlags = PointerFlags.UPDATE | PointerFlags.INRANGE | PointerFlags.INCONTACT;
     }
     TouchInjector.InjectTouchInput(4, touches);
-    Thread.Sleep(100);
+    Thread.Sleep(time);
 
     for (int i = 0; i < 4; i++)
     {
         touches[i].PointerInfo.PtPixelLocation.X += distance;
     }
     TouchInjector.InjectTouchInput(4, touches);
-
     for (int i = 0; i < 4; i++)
     {
         touches[i].PointerInfo.PtPixelLocation.X += distance;
         touches[i].PointerInfo.PointerFlags = PointerFlags.UP;
     }
     TouchInjector.InjectTouchInput(4, touches);
+
     return true;
 }
+
 
 while (true)
 {
@@ -76,12 +77,15 @@ while (true)
     */
     if (ctrlState != 0 && winState != 0 && upArrowState != 0)
     {
-        FourFingerSwipe(50);
+        FourFingerSwipe(50, 0);
         Thread.Sleep(300);
     }
     if (ctrlState != 0 && winState != 0 && downArrowState != 0)
     {
-        FourFingerSwipe(-50);
+        FourFingerSwipe(-50, 0);
         Thread.Sleep(300);
     }
+
 }
+
+
