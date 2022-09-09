@@ -1,3 +1,5 @@
+> :warning: **Auto-startup is broken as of now**: watch [this video](https://youtu.be/_bTTdKi7Lvg?t=369) to setup auto-start manually 
+
 # KeyBoard Shortcuts
 
 To Left workspace
@@ -9,7 +11,6 @@ To Right workspace
 
 <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>↓</kbd>
 
-> :warning: **Auto-startup is broken as of now**: watch [this video](https://youtu.be/_bTTdKi7Lvg?t=369) to setup auto-start manually 
 
 # Windows 11 desktop switch animations
 In windows 11, animations for switching between virtual desktops have been disabled, this can be bothersome because without the sliding desktop animations its hard to tell which desktop you're on. This small application fixes that by adding the animations back.
