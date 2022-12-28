@@ -9,6 +9,7 @@ To Right workspace
 
 <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>↓</kbd>
 
+## App will automatically start at windows startup
 
 # Windows 11 desktop switch animations
 In windows 11, animations for switching between virtual desktops have been disabled, this can be bothersome because without the sliding desktop animations its hard to tell which desktop you're on. This small application fixes that by adding the animations back.
