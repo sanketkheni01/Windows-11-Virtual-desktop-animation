@@ -1,5 +1,3 @@
-> :warning: **Auto-startup is broken as of now**: watch [this video](https://youtu.be/_bTTdKi7Lvg?t=369) to setup auto-start manually 
-
 # KeyBoard Shortcuts
 
 To Left workspace
