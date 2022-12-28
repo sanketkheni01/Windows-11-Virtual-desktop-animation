@@ -1,14 +1,29 @@
 ﻿using System.Runtime.InteropServices;
-using System;
 using Microsoft.Win32;
 using System.Reflection;
 using Exelus.Win11DesktopSwitchAnimatior;
+using Microsoft.Win32.TaskScheduler;
+using System.Security.Principal;
 
-RegistryKey rkApp = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-var rkValue = rkApp.GetValue("Win11DesktopSwitchAnimatior");
-if (rkValue == null)
+TaskService ts = new TaskService();
+TaskDefinition td = ts.NewTask();
+
+string appPath = AppContext.BaseDirectory;
+string exeName = Assembly.GetExecutingAssembly().GetName().Name;
+string exePath = appPath + exeName + ".exe";
+string taskName = "Windows 11 Virtual desktop animation";
+if (ts.FindTask(taskName) == null)
 {
-    rkApp.SetValue("Win11DesktopSwitchAnimatior", Assembly.GetExecutingAssembly().Location);
+    td.Actions.Add(new ExecAction("\"" + exePath + "\"", "", null));
+
+    td.Principal.RunLevel = TaskRunLevel.Highest; 
+    // get default userid
+    WindowsIdentity identity = WindowsIdentity.GetCurrent();
+
+    // Get the user name
+    string userName = identity.Name;
+    td.Triggers.Add(new LogonTrigger());
+    ts.RootFolder.RegisterTaskDefinition(taskName, td, TaskCreation.CreateOrUpdate, userName, null, TaskLogonType.InteractiveToken);
 }
 
 [DllImport("user32")]
