@@ -17,7 +17,7 @@ string taskName = "Windows 11 Virtual desktop animation";
 bool isSwitching = false;
 
 Assembly assembly = Assembly.GetExecutingAssembly();
-string version = assembly.GetName().Version.ToString();
+string? version = assembly.GetName().Version?.ToString();
 
 Trace.WriteLine("This is a log message." + version);
 
