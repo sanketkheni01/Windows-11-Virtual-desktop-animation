@@ -9,6 +9,10 @@ To Right workspace
 
 <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>↓</kbd>
 
+Quick peek
+
+<kbd>Win</kbd>+<kbd>Alt</kbd>
+
 ## App will automatically start at windows startup
 
 # Windows 11 desktop switch animations
