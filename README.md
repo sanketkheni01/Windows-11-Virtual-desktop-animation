@@ -1,6 +1,7 @@
 <img src="https://github.com/sanketkheni01/Windows-11-Virtual-desktop-animation/blob/main/preview.gif?raw=true" width=70%>
 
-![Download](https://badgen.net/github/assets-dl/sanketkheni01/Windows-11-Virtual-desktop-animation)
+[![Download](https://badgen.net/github/assets-dl/sanketkheni01/Windows-11-Virtual-desktop-animation)](https://github.com/sanketkheni01/Windows-11-Virtual-desktop-animation/releases)
+
 
 # KeyBoard Shortcuts
 
