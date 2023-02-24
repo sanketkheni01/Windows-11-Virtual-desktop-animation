@@ -27,6 +27,3 @@ Windows 11 still supports slide animations when swiping on a touchscreen, we mak
 
 # How to use
 Simply download and run the application, it will start a background process. while it's running, press win + ctrl + up or down arrow to switch between desktops.
-
-
-You can also run the `script.ps1` file in Powershell to toggle the program on and off
