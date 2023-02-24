@@ -1,9 +1,10 @@
+<img src="https://github.com/sanketkheni01/Windows-11-Virtual-desktop-animation/blob/main/preview.gif?raw=true" width=70%>
+
 # KeyBoard Shortcuts
 
 To Left workspace
 
 <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>↑</kbd>
-
 
 To Right workspace
 
