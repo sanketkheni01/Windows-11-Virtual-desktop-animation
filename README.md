@@ -1,6 +1,6 @@
 <img src="https://github.com/sanketkheni01/Windows-11-Virtual-desktop-animation/blob/main/preview.gif?raw=true" width=70%>
 
-[![Download](https://img.shields.io/badge/download-latest-blue.svg)]([https://github.com/your-username/your-repo/raw/master/my-app.zip](https://github.com/sanketkheni01/Windows-11-Virtual-desktop-animation/releases))
+[![Download](https://img.shields.io/badge/download-latest-blue.svg)](https://github.com/sanketkheni01/Windows-11-Virtual-desktop-animation/releases)
 
 
 # KeyBoard Shortcuts
