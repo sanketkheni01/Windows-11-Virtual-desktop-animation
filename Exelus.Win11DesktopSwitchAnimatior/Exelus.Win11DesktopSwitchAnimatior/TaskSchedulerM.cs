@@ -26,7 +26,7 @@ namespace Windows_11_Virtual_desktop_animation
             version = assembly.GetName().Version?.ToString();
 
             Microsoft.Win32.TaskScheduler.Task task = ts.FindTask(taskName);
-            string des = task.Definition.RegistrationInfo.Description;
+            string des = task?.Definition?.RegistrationInfo?.Description;
             if (task == null)
             {
                 createTask();
